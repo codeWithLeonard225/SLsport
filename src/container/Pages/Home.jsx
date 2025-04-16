@@ -9,14 +9,14 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 
-import img1 from "../../../public/aminata-fullah.jpeg"
-import img2 from "../../../public/mohamed-kallon.jpg"
-import img3 from "../../../public/female-football-tournament.jpg"
+import img1 from "/aminata-fullah.jpeg"
+import img2 from "/mohamed-kallon.jpg"
+import img3 from "/female-football-tournament.jpg"
 
 
-import img4 from "../../../public/sl-women.jpg"
-import img5 from "../../../public/swi.jpg"
-import img6 from "../../../public/bo-rangers.jpg"
+import img4 from "/sl-women.jpg"
+import img5 from "/swi.jpg"
+import img6 from "/bo-rangers.jpg"
 
 
 export default function Home() {

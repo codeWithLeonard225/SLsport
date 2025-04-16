@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Nav() {
@@ -7,8 +8,15 @@ export default function Nav() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
-    "Home", "About the Ministry", "Department & Units", "Sports We Govern",
-    "Upcoming Events/Competitions", "Gallery", "Facilities & Venue", "Contact Us"
+    { name: "Home", path: "/" },
+    { name: "About the Ministry", path: "/about" },
+    { name: "Department & Units", path: "/departments" },
+    { name: "Sports We Govern", path: "/sports" },
+    { name: " Athlete Profiles", path: "/athletes" },
+    { name: "Upcoming Events/Competitions", path: "/events" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Facilities & Venue", path: "/facilities" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -24,9 +32,14 @@ export default function Nav() {
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-6 text-gray-700 font-medium">
           {navItems.map((item, index) => (
-            <span key={index} className="hover:text-green-600 cursor-pointer">
-              {item}
-            </span>
+            <Link
+              key={index}
+              to={item.path}
+              className="hover:text-green-600"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </Link>
           ))}
         </nav>
       </div>
@@ -36,8 +49,14 @@ export default function Nav() {
         <div className="md:hidden bg-white px-4 pb-4 shadow-md">
           <ul className="flex flex-col gap-4 text-gray-700 font-medium">
             {navItems.map((item, index) => (
-              <li key={index} className="hover:text-green-600 cursor-pointer">
-                {item}
+              <li key={index}>
+                <Link
+                  to={item.path}
+                  className="hover:text-green-600 block"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
